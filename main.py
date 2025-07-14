@@ -14,7 +14,23 @@ while True:
     try:
         match opcion:
             case 1:
-                print("Ingresar Producto")
+                print("\nIngresar Producto")
+                codigo_producto = input("Ingrese el codigo del producto:")
+                if codigo_producto in productos:
+                    print("El codigo ya existe")
+                else:
+                    nombre_producto = input("Ingrese el nombre del producto:")
+                    seleccion_categoria = int(input("Ingrese el categoria del producto (1. Hombre, 2.Mujer o 3.Niño)"))
+                    if seleccion_categoria == 1:
+                        categoria_producto = "Hombre"
+                    elif seleccion_categoria == 2:
+                        categoria_producto = "Mujer"
+                    elif seleccion_categoria == 3:
+                        categoria_producto = "Niño"
+                    else:
+                        print("La categoria no existe")
+                        continue
+
             case 2:
                 print("Lista de Productos")
             case 3:
