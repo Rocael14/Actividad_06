@@ -73,8 +73,18 @@ while True:
                 print("-----------------------------------------------------------------")
                 print(f"Valor Total del Inventario: Q{valor_inventario}")
             case 5:
-                print("Cantidad Categoria")
-
+                cantidad_hombre = 0
+                cantidad_mujer = 0
+                cantidad_baby = 0
+                for producto in productos.values():
+                    if producto['categoria_producto'] == "Hombre":
+                        cantidad_hombre += producto['stock']
+                    elif producto['categoria_producto'] == "Mujer":
+                        cantidad_mujer += producto['stock']
+                    elif producto['categoria_producto'] == "Niño":
+                        cantidad_baby += producto['stock']
+                print("\nCantidad Producto por Categoria:")
+                print(f"Hombre: {cantidad_hombre} || Mujer: {cantidad_mujer} || Niño: {cantidad_baby}")
             case 6:
                 print("Gracias por utilizar el programa")
                 break
