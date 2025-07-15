@@ -3,7 +3,7 @@ def Menu():
     print("1. Ingresar Producto")
     print("2. Lista de Productos")
     print("3. Buscar Producto")
-    print("4. Cantidad Total de Inventario")
+    print("4. Valor Total del Inventario")
     print("5. Cantidad de Producto por categoria")
     print("6. Salir")
 
@@ -53,10 +53,28 @@ while True:
                     print("----------------------------")
             case 3:
                 print("Buscar Producto")
+                buscar_producto = input("Ingrese el codigo del producto: ")
+                if buscar_producto in productos:
+                    print("\nProducto encontrado")
+                    print(f"Nombre del producto: {productos[buscar_producto]['nombre_producto']}")
+                    print(f"Categoria del producto: {productos[buscar_producto]['categoria_producto']}")
+                    print(f"Talla: {productos[buscar_producto]['talla']}")
+                    print(f"Precio: {productos[buscar_producto]['precio']}")
+                    print(f"Stock: {productos[buscar_producto]['stock']}")
+                else:
+                    print("Producto no existe")
             case 4:
-                print("Cantidad Inventario")
+                print("Valor Inventario")
+                valor_inventario = 0
+                for inventario in productos.values():
+                    print("--------------------------------------------------------------------------------------------------------------------------")
+                    print(f"Nombre del producto: {inventario['nombre_producto']} || Talla: {inventario['talla']} || Precio Unitario: Q{inventario['precio']} || Stock: {inventario['stock']}")
+                    valor_inventario += inventario['precio'] * inventario['stock']
+                print("-----------------------------------------------------------------")
+                print(f"Valor Total del Inventario: Q{valor_inventario}")
             case 5:
                 print("Cantidad Categoria")
+
             case 6:
                 print("Gracias por utilizar el programa")
                 break
