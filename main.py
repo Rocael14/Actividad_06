@@ -30,7 +30,14 @@ while True:
                     else:
                         print("La categoria no existe")
                         continue
-
+                    talla=input("Ingrese la Talla:")
+                    precio=int(input("Ingrese el precio unitario del producto:"))
+                    if precio>0:
+                        stock=int(input("Ingrese el stock del producto:"))
+                        if stock>0:
+                            productos[codigo_producto]={"nombre_producto":nombre_producto, "categoria_producto":categoria_producto,
+                                                        "talla":talla, "precio":precio, "stock":stock}
+                            print(f"Prodcuto {nombre_producto} ingresadp correctamente")
             case 2:
                 print("Lista de Productos")
             case 3:
